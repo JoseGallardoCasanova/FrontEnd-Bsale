@@ -1,0 +1,18 @@
+body {
+  /* background-color: red; */
+}
+
+.hero-section {
+  margin-top: 10rem;
+}
+
+.cardCount {
+  border: solid;
+  padding: 10px;
+  border-radius: 50%;
+  color: white;
+  background: red;
+  transform: translateY(-50px);
+  transform: translate(50px, -50px);
+  position: absolute;
+}

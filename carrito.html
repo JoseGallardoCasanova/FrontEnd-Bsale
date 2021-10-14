@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tienda Bsale</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+    <a class="navbar-brand" href="index.html">Tienda B-Sale</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+      </ul>
+    </div>
+  </nav>
+
+
+  <main>
+    <div class="container">
+      <div class="row mt-3">
+        <div class="col">
+          <h2 class="d-flex justify-content-center mb-3">Realizar Compra</h2>
+          <form id="procesar-pago" action="#">
+            <div class="form-group row">
+              <label for="cliente" class="col-12 col-md-2 col-form-label h2">Cliente :</label>
+              <div class="col-12 col-md-10">
+                <input type="text" class="form-control" id="cliente" placeholder="Ingresa nombre cliente" required>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="email" class="col-12 col-md-2 col-form-label h2">Correo :</label>
+              <div class="col-12 col-md-10">
+                <input type="email" class="form-control" id="correo" placeholder="Ingresa tu correo" required>
+              </div>
+            </div>
+            <table id="tabla-pagar" class="table table-bordered">
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="col">Cantidad</th>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Precio</th>
+                  <th scope="col">Acción</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+            <div class="container text-center">
+              <h3>TOTAL : <p id="total"></p>
+              </h3>
+            </div>
+            <div class="row justify-content-between">
+              <div class="col-md-4 mb-2">
+                <a href="index.html" class="btn btn-info btn-block">Seguir comprando</a>
+              </div>
+              <div class="col-xs-12 col-md-4">
+                <button id="pagar" class="btn btn-success btn-block">Pagar Mi Cuenta</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+  <script src="./assets/js/script.js"></script>
+
+</body>
+
+</html>
