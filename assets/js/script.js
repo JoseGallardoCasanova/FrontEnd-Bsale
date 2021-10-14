@@ -207,7 +207,7 @@ $("#categories").change(function () {
         $(`#product`).append(cards);
       },
       error: function () {
-        alert('Elija una Categoria');
+        alert('Failed!');
       }
     });
   }
