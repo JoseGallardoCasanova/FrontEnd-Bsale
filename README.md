@@ -12,11 +12,9 @@ _-Express version 4.17.1_
 
 ## Construido con 🛠️
 
-_-Backend: Node.js, Express_
 
-_-Frontend: Vanilla Javascript, Jquery, Bootstrap, CSS, HTML_
+_-Frontend: Node.js, Vanilla Javascript, Jquery, Bootstrap, CSS, HTML_
 
-_-Base de Datos: MySQL_
 
 ## Autores ✒️
 
@@ -24,8 +22,8 @@ _-Base de Datos: MySQL_
 
 ## Deploy 📄
 
-_GET https://peaceful-citadel-68878.herokuapp.com/bsale/products => Retornara todos los productos dispinibles por Bsale_
+_ https://peaceful-citadel-68878.herokuapp.com/bsale/products => Retornara todos los productos dispinibles por Bsale_
 
-_GET https://peaceful-citadel-68878.herokuapp.com/bsale/category/:id => Retornara todos los productos que coincidan con un id_
+_ https://peaceful-citadel-68878.herokuapp.com/bsale/category/:id => Retornara todos los productos que coincidan con un id_
 
-_GET https://peaceful-citadel-68878.herokuapp.com/bsale/search/:name => Retornara los productos que coincidan con los parametros enviados_
+_ https://peaceful-citadel-68878.herokuapp.com/bsale/search/:name => Retornara los productos que coincidan con los parametros enviados_
