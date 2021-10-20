@@ -56,11 +56,14 @@ const allProducts = () => {
     success: function (data) {
       let cards = "";
       $.each(data, (i, row) => {
+        console.log(row.url_image )
+        let img = row.url_image != null && row.url_image != '' ? row.url_image : 'assets/img/productImg.png'
         let pro = [row.id, row.name, row.price, row.url_image];
         cards += `
     <div class="col-md-4 mb-5">
       <div class="card" style="width: 18rem">
-        <img src="${row.url_image}" class="card-img-top" alt="..." />
+        
+        <img src="${img}" class="card-img-top" alt="..." />
         <div class="card-body">
           <h5 class="card-title">${row.name}</h5>
           <h5 class="card-title">${row.price}</h5>
@@ -102,11 +105,12 @@ $("nav").on("submit", (event) => {
       if (data != "No se encontraron resultados") {
         let cards = "";
         $.each(data, (i, row) => {
+          let img = row.url_image != null && row.url_image != '' ? row.url_image : 'assets/img/productImg.png'
           let pro = [row.id, row.name, row.price, row.url_image];
           cards += `
             <div class="col-md-4 mb-5">
               <div class="card" style="width: 18rem">
-                <img src="${row.url_image}" class="card-img-top" alt="..." />
+                <img src="${img}" class="card-img-top" alt="..." />
                 <div class="card-body">
                   <h5 class="card-title">${row.name}</h5>
                   <h5 class="card-title">${row.price}</h5>
@@ -143,7 +147,6 @@ function checket(item) {
       id: itemProduct[0],
       name: itemProduct[1],
       price: itemProduct[2],
-      img: itemProduct[3],
       cant: 1,
     };
     productAll.push(product);
@@ -191,11 +194,12 @@ $("#categories").change(function () {
 
         let cards = "";
         $.each(data, (i, row) => {
+          let img = row.url_image != null && row.url_image != '' ? row.url_image : 'assets/img/productImg.png'
           let pro = [row.id, row.name, row.price, row.url_image];
           cards += `
               <div class="col-md-4 mb-5">
                 <div class="card" style="width: 18rem">
-                  <img src="${row.url_image}" class="card-img-top" alt="..." />
+                  <img src="${img}" class="card-img-top" alt="..." />
                   <div class="card-body">
                     <h5 class="card-title">${row.name}</h5>
                     <h5 class="card-title">${row.price}</h5>
