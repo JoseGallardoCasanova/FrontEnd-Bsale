@@ -97,11 +97,8 @@ $("nav").on("submit", (event) => {
   let search = document.getElementById("search").value;
   if (search.trim() === "") {
     alert("Debe ingresar una palabra para poder buscar")
-
   } else {
-
     document.getElementById("product").innerHTML = "";
-
     $.ajax({
       type: 'GET',
       url: `https://peaceful-citadel-68878.herokuapp.com/bsale/search/${search}`,
