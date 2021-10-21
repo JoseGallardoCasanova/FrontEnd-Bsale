@@ -95,40 +95,48 @@ const productTotal = () => {
 $("nav").on("submit", (event) => {
   event.preventDefault();
   let search = document.getElementById("search").value;
-  document.getElementById("product").innerHTML = "";
+  if (search.trim() === "") {
+    alert("Debe ingresar una palabra para poder buscar")
 
-  $.ajax({
-    type: 'GET',
-    url: `https://peaceful-citadel-68878.herokuapp.com/bsale/search/${search}`,
-    success: function (data) {
-      if (data != "No se encontraron resultados") {
-        let cards = "";
-        $.each(data, (i, row) => {
-          let img = row.url_image != null && row.url_image != '' ? row.url_image : 'assets/img/productImg.png'
-          let pro = [row.id, row.name, row.price, row.url_image];
-          cards += `
-            <div class="col-md-4 mb-5">
-              <div class="card" style="width: 18rem">
-                <img src="${img}" class="card-img-top" alt="..." />
-                <div class="card-body">
-                  <h5 class="card-title">${row.name}</h5>
-                  <h5 class="card-title">${row.price}</h5>
-                  <a id="${row.id}" onclick="checket('${pro}'), addCard()" class="apretar btn btn-primary">Agregar</a>
+  } else {
+
+    document.getElementById("product").innerHTML = "";
+
+    $.ajax({
+      type: 'GET',
+      url: `https://peaceful-citadel-68878.herokuapp.com/bsale/search/${search}`,
+      success: function (data) {
+        if (data != "No se encontraron resultados") {
+          let cards = "";
+          $.each(data, (i, row) => {
+            let img = row.url_image != null && row.url_image != '' ? row.url_image : 'assets/img/productImg.png'
+            let pro = [row.id, row.name, row.price, row.url_image];
+            cards += `
+              <div class="col-md-4 mb-5">
+                <div class="card" style="width: 18rem">
+                  <img src="${img}" class="card-img-top" alt="..." />
+                  <div class="card-body">
+                    <h5 class="card-title">${row.name}</h5>
+                    <h5 class="card-title">${row.price}</h5>
+                    <a id="${row.id}" onclick="checket('${pro}'), addCard()" class="apretar btn btn-primary">Agregar</a>
+                  </div>
                 </div>
-              </div>
-            </div>`;
-        });
-        $(`#product`).append(cards);
-      } else {
-        let cards = "";
-        cards += `<h1>No se encontraron productos</h1>`;
-        $(`#product`).append(cards);
+              </div>`;
+          });
+          $(`#product`).append(cards);
+        } else {
+          let cards = "";
+          cards += `<h1>No se encontraron productos</h1>`;
+          $(`#product`).append(cards);
+        }
+      },
+      error: function () {
+        alert('Failed!');
       }
-    },
-    error: function () {
-      alert('Failed!');
-    }
-  });
+    });
+
+  }
+
 });
 
 //selecciona y garda productos en localstorage
