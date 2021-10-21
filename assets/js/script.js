@@ -56,7 +56,6 @@ const allProducts = () => {
     success: function (data) {
       let cards = "";
       $.each(data, (i, row) => {
-        console.log(row.url_image )
         let img = row.url_image != null && row.url_image != '' ? row.url_image : 'assets/img/productImg.png'
         let pro = [row.id, row.name, row.price, row.url_image];
         cards += `
